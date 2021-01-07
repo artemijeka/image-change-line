@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+ <meta charset="UTF-8">
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <title>Переход одного изображения в другое вертикальной линией | Transition from one image to another with a vertical line</title>
+ <link rel="stylesheet" href="./style.min.css">
+</head>
+
+<body>
+
+
+
+ <main>
+
+  <section class="vertical-line-change vertical-line-change_img">
+   <img src="./ferrari.jpg" alt="car" class="vertical-line-change__img">
+   <span class="vertical-line-change__line vertical-line-change__line_bottom"></span>
+   <div class="vertical-line-change__pellicle vertical-line-change__pellicle_color"></div>
+  </section>
+
+  <section class="vertical-line-change vertical-line-change_text">
+   <h1 class="vertical-line-change__text">
+    Переход одного
+    <br /><span class="vertical-line-change__text_stroke">изобра<wbr>жения</span>
+    <br />в другое
+   </h1>
+   <span class="vertical-line-change__line vertical-line-change__line_top"></span>
+   <div class="vertical-line-change__pellicle vertical-line-change__pellicle_difference"></div>
+  </section>
+
+ </main>
+
+
+
+ <script>
+  
+  var pellicleDifference = document.querySelector('.vertical-line-change__pellicle_difference');
+  var verticalLineTop = document.querySelector('.vertical-line-change__line_top');
+  var textBlock = document.querySelector('.vertical-line-change_text');
+  textBlock.onmousemove = function (e) {
+   var x = e.clientX;
+   pellicleDifference.style.left = x + 'px';
+   verticalLineTop.style.left = x + 'px';
+   // var y = e.clientY;
+   // pellicle.style.top = y + 'px';
+  };
+  var pellicleColor = document.querySelector('.vertical-line-change__pellicle_color');
+  var verticalLineBottom = document.querySelector('.vertical-line-change__line_bottom');
+  var imgBlock = document.querySelector('.vertical-line-change_img');
+  imgBlock.onmousemove = function (e) {
+   var x = e.clientX;
+   pellicleColor.style.left = x + 'px';
+   verticalLineBottom.style.left = x + 'px';
+   // var y = e.clientY;
+   // pellicle.style.top = y + 'px';
+  };
+
+ </script>
+
+</body>
+
+</html>
